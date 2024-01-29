@@ -56,7 +56,6 @@ class HomeFragment : Fragment(), HomeListener {
             repeatOnLifecycle(Lifecycle.State.STARTED){
                 homeViewModel.state.collect{
                     homeAdapter.updateItems(it.posts)
-                    binding.postsRecyclerView.smoothScrollToPosition(0)
                 }
             }
         }

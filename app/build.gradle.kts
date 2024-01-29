@@ -1,6 +1,10 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.dagger.hilt.android")
+    id("androidx.navigation.safeargs.kotlin")
+    id("kotlin-kapt")
+    id("org.jetbrains.kotlin.plugin.serialization")
 }
 
 android {
@@ -33,6 +37,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures{
+        dataBinding = true
+    }
 }
 
 dependencies {
@@ -44,4 +52,36 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    val fragmentKtxVersion = "1.5.7"
+    val activityKtxVersion = "1.7.1"
+    val hiltVersion = "2.46.1"
+    val daggerVersion = "2.35.1"
+    val retrofitVersion = "2.9.0"
+    val loggingVersion = "5.0.0-alpha.11"
+    val coroutineVersion = "1.6.4"
+    val lifecycleVersion = "2.6.1"
+    val serializationVersion = "1.3.3"
+    val navVersion = "2.6.0"
+
+    implementation("androidx.fragment:fragment-ktx:$fragmentKtxVersion")
+    implementation("androidx.activity:activity-ktx:$activityKtxVersion")
+
+    implementation("com.google.dagger:hilt-android:$hiltVersion")
+    kapt("com.google.dagger:hilt-compiler:$hiltVersion")
+    implementation("com.google.dagger:dagger-android:$daggerVersion")
+
+    implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
+    implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
+
+    implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
+    implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
+    implementation("com.squareup.okhttp3:logging-interceptor:$loggingVersion")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationVersion")
 }

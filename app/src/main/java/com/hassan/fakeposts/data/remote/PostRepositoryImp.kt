@@ -14,6 +14,10 @@ class PostRepositoryImp @Inject constructor(
         return wrapResponse { postService.getAllPosts() }.map { it.toPost() }
     }
 
+    override suspend fun getPostById(id: String): Post {
+        return wrapResponse { postService.getPostById(id) }.toPost()
+    }
+
     private suspend fun <T> wrapResponse(
         function: suspend () -> Response<T>
     ): T {

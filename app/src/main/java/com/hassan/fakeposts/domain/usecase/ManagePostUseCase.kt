@@ -7,6 +7,6 @@ import javax.inject.Inject
 class ManagePostUseCase @Inject constructor(
     private val repository: PostRepository
 ) {
-
     suspend fun getAllPosts(): List<Post> = repository.getAllPosts()
+    suspend fun getPostById(id: String): Post = repository.getPostById(id)
 }

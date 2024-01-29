@@ -1,5 +1,7 @@
 package com.hassan.fakeposts.domain.repository
 
-interface PostRepository{
+import com.hassan.fakeposts.domain.entity.Post
 
+interface PostRepository{
+    suspend fun getAllPosts(): List<Post>
 }

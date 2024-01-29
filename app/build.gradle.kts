@@ -55,13 +55,13 @@ dependencies {
 
     val fragmentKtxVersion = "1.5.7"
     val activityKtxVersion = "1.7.1"
-    val hiltVersion = "2.44"
+    val hiltVersion = "2.46.1"
     val daggerVersion = "2.35.1"
     val retrofitVersion = "2.9.0"
     val loggingVersion = "5.0.0-alpha.11"
     val coroutineVersion = "1.6.4"
     val lifecycleVersion = "2.6.1"
-    val serializationVersion = "1.5.0"
+    val serializationVersion = "1.3.3"
     val navVersion = "2.6.0"
 
     implementation("androidx.fragment:fragment-ktx:$fragmentKtxVersion")

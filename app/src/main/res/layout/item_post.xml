@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="item"
+            type="com.hassan.fakeposts.presentation.viewmodel.home.PostUiState" />
+
+        <variable
+            name="listener"
+            type="com.hassan.fakeposts.presentation.viewmodel.home.HomeListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F7f7f7"
+        android:layout_marginVertical="4dp"
+        android:paddingVertical="8dp"
+        android:paddingHorizontal="4dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:textSize="20sp"
+                android:text="@{item.title}"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:textSize="16sp"
+                android:layout_marginTop="8.dp"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:text="@{item.body}"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

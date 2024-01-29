@@ -1,4 +1,4 @@
-package com.hassan.fakeposts.presentation.ui
+package com.hassan.fakeposts.presentation.ui.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import com.hassan.fakeposts.R
 import com.hassan.fakeposts.databinding.FragmentHomeBinding
 import com.hassan.fakeposts.presentation.viewmodel.home.HomeListener
@@ -62,7 +63,9 @@ class HomeFragment : Fragment(), HomeListener {
     }
 
     override fun onPostClick(id: String) {
-        TODO("Not yet implemented")
+        findNavController().navigate(
+            HomeFragmentDirections.actionHomeFragmentToDetailsFragment(id)
+        )
     }
 
 }

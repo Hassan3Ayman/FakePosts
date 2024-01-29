@@ -1,4 +1,4 @@
-package com.hassan.fakeposts.presentation.ui
+package com.hassan.fakeposts.presentation.ui.home
 
 import androidx.recyclerview.widget.DiffUtil
 import com.hassan.fakeposts.presentation.viewmodel.home.PostUiState

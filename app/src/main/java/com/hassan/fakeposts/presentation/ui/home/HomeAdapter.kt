@@ -1,6 +1,5 @@
-package com.hassan.fakeposts.presentation.ui
+package com.hassan.fakeposts.presentation.ui.home
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
